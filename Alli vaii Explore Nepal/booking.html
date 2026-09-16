@@ -1,0 +1,3041 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Your Trip | Explore Nepal</title>
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         BOOKING PAGE EXTRA CSS
+    ====================================================== -->
+
+    <style>
+
+
+        /* =====================================================
+           BOOKING HEADING
+        ===================================================== */
+
+        .booking-heading h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 52px;
+            color: #ffffff;
+
+            margin: 10px 0;
+        }
+
+        .booking-heading p {
+            color: rgba(255,255,255,.90);
+        }
+
+
+        /* =====================================================
+           BOOKING CARD
+        ===================================================== */
+
+        .booking-card {
+            border-radius: 28px;
+            overflow: hidden;
+
+            background: rgba(255,255,255,.98);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.35);
+
+            border: 1px solid rgba(255,255,255,.35);
+        }
+
+
+        /* =====================================================
+           INPUT
+        ===================================================== */
+
+        .booking-card input,
+        .booking-card select,
+        .booking-card textarea {
+
+            border: 1.5px solid #d7e5e8;
+
+            border-radius: 13px;
+
+            transition: all .3s ease;
+
+            background: #ffffff;
+
+        }
+
+
+        .booking-card input:focus,
+        .booking-card select:focus,
+        .booking-card textarea:focus {
+
+            border-color: #0799a6;
+
+            box-shadow:
+                0 0 0 4px rgba(7,153,166,.12);
+
+            outline: none;
+
+        }
+
+
+        /* =====================================================
+           TOTAL PRICE
+        ===================================================== */
+
+        .total-price-box {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 20px 24px;
+
+            border-radius: 16px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e6fbfa,
+                    #f5ffff
+                );
+
+            border-left: 5px solid #0799a6;
+
+            box-shadow:
+                0 8px 25px rgba(0,120,130,.08);
+
+        }
+
+
+        .total-price-box span {
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            color: #173f4a;
+
+        }
+
+
+        .total-price-box strong {
+
+            font-size: 25px;
+
+            color: #078995;
+
+        }
+
+
+        /* =====================================================
+           FORM BUTTON
+        ===================================================== */
+
+        .booking-card .full-btn {
+
+            border: none;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #078995,
+                    #08b3b5,
+                    #18c49d
+                );
+
+            box-shadow:
+                0 12px 30px rgba(0,145,155,.25);
+
+            transition: all .3s ease;
+
+        }
+
+
+        .booking-card .full-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 38px rgba(0,145,155,.35);
+
+        }
+
+
+        /* =====================================================
+           CONFIRMATION SCREEN
+        ===================================================== */
+
+        #bookingConfirmation {
+
+            display: none;
+
+            max-width: 1100px;
+
+            margin: 50px auto 0;
+
+            animation: slideUp .6s ease;
+
+        }
+
+
+        @keyframes slideUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(40px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CONFIRMATION HEADER
+        ===================================================== */
+
+        .confirmation-top {
+
+            text-align: center;
+
+            color: white;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .confirmation-icon {
+
+            width: 78px;
+
+            height: 78px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #18c9ae,
+                    #078995
+                );
+
+            font-size: 32px;
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,.3);
+
+        }
+
+
+        .confirmation-top h2 {
+
+            margin-top: 15px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 40px;
+
+        }
+
+
+        .confirmation-top p {
+
+            color: rgba(255,255,255,.88);
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =====================================================
+           CONFIRMATION CARD
+        ===================================================== */
+
+        .confirmation-card {
+
+            background: rgba(255,255,255,.98);
+
+            border-radius: 28px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.30);
+
+        }
+
+
+        /* =====================================================
+           BOOKING ID
+        ===================================================== */
+
+        .booking-reference {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px 22px;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e8fbfa,
+                    #f4ffff
+                );
+
+            border: 1px solid #cbe9ea;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .booking-reference small {
+
+            display: block;
+
+            color: #647b82;
+
+            font-size: 12px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .booking-reference strong {
+
+            color: #078995;
+
+            font-size: 21px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .booking-reference i {
+
+            font-size: 28px;
+
+            color: #0799a6;
+
+        }
+
+
+        /* =====================================================
+           DETAILS TITLE
+        ===================================================== */
+
+        .confirmation-title {
+
+            color: #123b48;
+
+            font-size: 21px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .confirmation-title i {
+
+            color: #078995;
+
+            margin-right: 7px;
+
+        }
+
+
+        /* =====================================================
+           DETAILS GRID
+        ===================================================== */
+
+        .confirmation-details {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .confirmation-detail {
+
+            padding: 17px;
+
+            border-radius: 14px;
+
+            background: #f7fafb;
+
+            border: 1px solid #e2edef;
+
+        }
+
+
+        .confirmation-detail.full {
+
+            grid-column: 1 / -1;
+
+        }
+
+
+        .confirmation-detail span {
+
+            display: block;
+
+            font-size: 12px;
+
+            color: #75868d;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .confirmation-detail strong {
+
+            color: #183c48;
+
+            font-size: 15px;
+
+            word-break: break-word;
+
+        }
+
+
+        /* =====================================================
+           PAYMENT AREA
+        ===================================================== */
+
+        .payment-area {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+
+            margin-top: 30px;
+
+        }
+
+
+        /* =====================================================
+           PAYMENT SUMMARY
+        ===================================================== */
+
+        .payment-summary {
+
+            padding: 27px;
+
+            border-radius: 22px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #063b4a,
+                    #087f8c,
+                    #0c9fa8
+                );
+
+            box-shadow:
+                0 15px 35px rgba(0,70,80,.22);
+
+        }
+
+
+        .payment-summary h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .payment-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.17);
+
+        }
+
+
+        .payment-row:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .payment-row span {
+
+            color: rgba(255,255,255,.78);
+
+        }
+
+
+        .payment-row strong {
+
+            font-size: 16px;
+
+        }
+
+
+        .payment-row.advance {
+
+            margin-top: 5px;
+
+            padding: 17px 0;
+
+        }
+
+
+        .payment-row.advance strong {
+
+            color: #8ff6dd;
+
+            font-size: 25px;
+
+        }
+
+
+        /* =====================================================
+           PAYMENT METHODS
+        ===================================================== */
+
+        .payment-method-box {
+
+            padding: 27px;
+
+            border-radius: 22px;
+
+            background: #f6fbfb;
+
+            border: 1px solid #d6eaec;
+
+        }
+
+
+        .payment-method-box h3 {
+
+            color: #143d49;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .payment-option {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 14px;
+
+            border-radius: 13px;
+
+            background: white;
+
+            border: 1.5px solid #dce8ea;
+
+            margin-bottom: 10px;
+
+            cursor: pointer;
+
+            transition: .25s;
+
+        }
+
+
+        .payment-option:hover {
+
+            border-color: #08a0a9;
+
+            transform: translateX(3px);
+
+            background: #f0fbfb;
+
+        }
+
+
+        .payment-option input {
+
+            width: 17px;
+
+            height: 17px;
+
+            accent-color: #078995;
+
+        }
+
+
+        .payment-option i {
+
+            width: 37px;
+
+            height: 37px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 9px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #078995,
+                    #0db8ae
+                );
+
+        }
+
+
+        .payment-option span {
+
+            font-weight: 700;
+
+            color: #23444d;
+
+        }
+
+
+        /* =====================================================
+           PAY BUTTON
+        ===================================================== */
+
+        .pay-advance-btn {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 18px;
+
+            margin-top: 15px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #f59e0b,
+                    #f97316,
+                    #ef4444
+                );
+
+            box-shadow:
+                0 12px 30px rgba(245,120,20,.25);
+
+            transition: .3s;
+
+        }
+
+
+        .pay-advance-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 35px rgba(245,120,20,.35);
+
+        }
+
+
+        .pay-advance-btn:disabled {
+
+            opacity: .7;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+        }
+
+
+        .secure-payment {
+
+            text-align: center;
+
+            font-size: 12px;
+
+            color: #72848a;
+
+            margin-top: 12px;
+
+        }
+
+
+        /* =====================================================
+           SUCCESS SCREEN
+        ===================================================== */
+
+        #bookingSuccess {
+
+            display: none;
+
+            max-width: 720px;
+
+            margin: 50px auto;
+
+            animation: successShow .7s ease;
+
+        }
+
+
+        @keyframes successShow {
+
+            from {
+
+                opacity: 0;
+
+                transform: scale(.92);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: scale(1);
+
+            }
+
+        }
+
+
+        .success-card {
+
+            background: white;
+
+            padding: 50px 40px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.32);
+
+        }
+
+
+        .success-check {
+
+            width: 100px;
+
+            height: 100px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            color: white;
+
+            font-size: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #10b981,
+                    #059669
+                );
+
+            box-shadow:
+                0 15px 40px rgba(5,150,105,.3);
+
+            animation: checkPop .7s ease;
+
+        }
+
+
+        @keyframes checkPop {
+
+            0% {
+                transform: scale(.2);
+            }
+
+            70% {
+                transform: scale(1.12);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+
+        .success-card h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 40px;
+
+            color: #078995;
+
+            margin-top: 22px;
+
+        }
+
+
+        .success-card > p {
+
+            color: #667980;
+
+            line-height: 1.7;
+
+            margin-top: 8px;
+
+        }
+
+
+        .success-information {
+
+            margin-top: 25px;
+
+            text-align: left;
+
+            padding: 22px;
+
+            border-radius: 18px;
+
+            background: #f2fbf8;
+
+            border: 1px solid #d4eee6;
+
+        }
+
+
+        .success-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 11px 0;
+
+            border-bottom:
+                1px solid #dcece7;
+
+        }
+
+
+        .success-row:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .success-row span {
+
+            color: #687c82;
+
+        }
+
+
+        .success-row strong {
+
+            color: #087f8c;
+
+            text-align: right;
+
+        }
+
+
+        .confirmed-status {
+
+            color: #059669 !important;
+
+        }
+
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .home-btn {
+
+            border: none;
+
+            margin-top: 25px;
+
+            padding: 15px 30px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #087f8c,
+                    #0bb6ad
+                );
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .home-btn:hover {
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+
+
+
+/* =====================================================
+   MOBILE BANKING
+===================================================== */
+
+.bank-selection {
+    margin: 5px 0 15px 0;
+    padding: 18px;
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eafafa,
+            #f7ffff
+        );
+
+    border: 1px solid #cce9eb;
+
+    animation: bankSlide .35s ease;
+}
+
+
+@keyframes bankSlide {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.bank-selection-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 10px;
+
+    color: #087f8c;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+
+.bank-selection-title i {
+
+    font-size: 16px;
+
+}
+
+
+.bank-selection select {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    border: 1.5px solid #cfe4e6;
+
+    background: white;
+
+    color: #23444d;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: .25s ease;
+
+}
+
+
+.bank-selection select:focus {
+
+    border-color: #0799a6;
+
+    box-shadow:
+        0 0 0 4px rgba(7,153,166,.12);
+
+}
+
+
+/* Selected payment option */
+
+.payment-option:has(input:checked) {
+
+    border-color: #078995;
+
+    background: #edfbfa;
+
+    box-shadow:
+        0 5px 18px rgba(7,137,149,.10);
+
+}
+
+
+.payment-option:has(input:checked) span {
+
+    color: #078995;
+
+}
+
+
+/* Payment button amount */
+
+#advanceButtonAmount {
+
+    font-weight: 900;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width: 768px) {
+
+            .booking-heading h1 {
+
+                font-size: 38px;
+
+            }
+
+
+            .confirmation-card {
+
+                padding: 22px;
+
+            }
+
+
+            .confirmation-details {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .confirmation-detail.full {
+
+                grid-column: auto;
+
+            }
+
+
+            .payment-area {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .booking-reference {
+
+                padding: 15px;
+
+            }
+
+
+            .booking-reference strong {
+
+                font-size: 17px;
+
+            }
+
+
+            .success-card {
+
+                padding: 35px 22px;
+
+            }
+
+
+            .success-card h2 {
+
+                font-size: 32px;
+
+            }
+
+
+            .success-row {
+
+                flex-direction: column;
+
+                gap: 3px;
+
+            }
+
+
+            .success-row strong {
+
+                text-align: left;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body class="booking-page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="container nav-container">
+
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-mountain-sun"></i>
+
+            </div>
+
+            <div>
+
+                <span>EXPLORE</span>
+
+                <strong>NEPAL</strong>
+
+            </div>
+
+        </a>
+
+
+        <button class="menu-btn" id="menuBtn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <nav class="navbar" id="navbar">
+
+            <a href="index.html">Home</a>
+
+            <a href="destinations.html">
+                Destinations
+            </a>
+
+            <a href="packages.html">
+                Packages
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     BOOKING SECTION
+========================================================= -->
+
+<section class="booking-section">
+
+    <div class="booking-overlay"></div>
+
+
+    <div class="container booking-container">
+
+
+        <!-- ================= HEADING ================= -->
+
+        <div class="booking-heading">
+
+            <span class="section-label light">
+                START YOUR JOURNEY
+            </span>
+
+            <h1>
+                Book Your Trip
+            </h1>
+
+            <p>
+
+                Tell us about your travel plans and
+                we'll help you create an unforgettable
+                Nepal experience.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STEP 1 : BOOKING FORM
+        ================================================== -->
+
+        <div class="booking-card"
+             id="bookingFormCard">
+
+
+            <form id="bookingForm">
+
+
+                <!-- NAME + EMAIL -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your email address"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE + DESTINATION -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+977 XXXXX XXXXX"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="destination">
+                            Select Destination
+                        </label>
+
+
+                        <select
+                            id="destination"
+                            name="destination"
+                            required
+                        >
+
+                            <option value="">
+                                Select destination
+                            </option>
+
+
+                            <option
+                                value="Kathmandu"
+                                data-price="16000"
+                            >
+                                Kathmandu - NPR.16,000 / person
+                            </option>
+
+
+                            <option
+                                value="Janakpur"
+                                data-price="9000"
+                            >
+                                Janakpur - NPR.9,000 / person
+                            </option>
+
+
+                            <option
+                                value="Pokhara"
+                                data-price="22500"
+                            >
+                                Pokhara - NPR.22,500 / person
+                            </option>
+
+
+                            <option
+                                value="Everest"
+                                data-price="105000"
+                            >
+                                Everest - NPR.105,000 / person
+                            </option>
+
+
+                            <option
+                                value="Mustang"
+                                data-price="30000"
+                            >
+                                Mustang - NPR.30,000 / person
+                            </option>
+
+
+                            <option
+                                value="Lumbini"
+                                data-price="14000"
+                            >
+                                Lumbini - NPR.14,000 / person
+                            </option>
+
+
+                            <option
+                                value="Bhaktapur"
+                                data-price="12000"
+                            >
+                                Bhaktapur - NPR.12,000 / person
+                            </option>
+
+
+                            <option
+                                value="Chitwan"
+                                data-price="15000"
+                            >
+                                Chitwan - NPR.15,000 / person
+                            </option>
+
+
+                            <option
+                                value="Annapurna"
+                                data-price="85000"
+                            >
+                                Annapurna - NPR.85,000 / person
+                            </option>
+
+
+                            <option
+                                value="Chandragiri Hills"
+                                data-price="13000"
+                            >
+                                Chandragiri Hills - NPR.13,000 / person
+                            </option>
+
+
+                            <option
+                                value="Nagarkot"
+                                data-price="10000"
+                            >
+                                Nagarkot - NPR.10,000 / person
+                            </option>
+
+
+                            <option
+                                value="Koshi Tappu"
+                                data-price="33000"
+                            >
+                                Koshi Tappu - NPR.33,000 / person
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PERSON + DATE -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Number of Persons
+                        </label>
+
+                        <input
+                            type="number"
+                            id="persons"
+                            name="persons"
+                            min="1"
+                            max="50"
+                            value="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Travel Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                            name="date"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- TOTAL -->
+
+                <div class="total-price-box">
+
+                    <span>
+                        Total Package Price
+                    </span>
+
+                    <strong id="totalPrice">
+                        NPR.0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SPECIAL REQUEST -->
+
+                <div class="form-group">
+
+                    <label>
+                        Special Request
+                    </label>
+
+                    <textarea
+                        id="specialRequest"
+                        name="request"
+                        rows="5"
+                        placeholder="Any special requirements?"
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="btn btn-primary full-btn"
+                >
+
+                    Continue to Booking Confirmation
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <p class="form-note">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Your information is used only for
+                    booking enquiries.
+
+                </p>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STEP 2 : BOOKING CONFIRMATION
+        ================================================== -->
+
+        <div id="bookingConfirmation">
+
+
+            <div class="confirmation-top">
+
+
+                <div class="confirmation-icon">
+
+                    <i class="fa-solid fa-clipboard-check"></i>
+
+                </div>
+
+
+                <h2>
+                    Review Your Booking
+                </h2>
+
+
+                <p>
+
+                    Please review all your details
+                    before making the advance payment.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="confirmation-card">
+
+
+                <!-- BOOKING REFERENCE -->
+
+                <div class="booking-reference">
+
+
+                    <div>
+
+                        <small>
+                            BOOKING REFERENCE
+                        </small>
+
+                        <strong id="bookingId">
+                            ENP-000000
+                        </strong>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-ticket"></i>
+
+                </div>
+
+
+
+                <!-- DETAILS -->
+
+                <h3 class="confirmation-title">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                    Traveler & Trip Details
+
+                </h3>
+
+
+
+                <div class="confirmation-details">
+
+
+                    <div class="confirmation-detail">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="confirmName">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirmation-detail">
+
+                        <span>
+                            Email Address
+                        </span>
+
+                        <strong id="confirmEmail">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirmation-detail">
+
+                        <span>
+                            Phone Number
+                        </span>
+
+                        <strong id="confirmPhone">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirmation-detail">
+
+                        <span>
+                            Destination
+                        </span>
+
+                        <strong id="confirmDestination">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirmation-detail">
+
+                        <span>
+                            Number of Persons
+                        </span>
+
+                        <strong id="confirmPersons">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirmation-detail">
+
+                        <span>
+                            Travel Date
+                        </span>
+
+                        <strong id="confirmDate">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confirmation-detail full">
+
+                        <span>
+                            Special Request
+                        </span>
+
+                        <strong id="confirmRequest">
+                            No special request
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PAYMENT AREA
+                ================================================== -->
+
+                <div class="payment-area">
+
+
+                    <!-- PAYMENT SUMMARY -->
+
+                    <div class="payment-summary">
+
+
+                        <h3>
+
+                            <i class="fa-solid fa-calculator"></i>
+
+                            Payment Summary
+
+                        </h3>
+
+
+                        <div class="payment-row">
+
+                            <span>
+                                Package Price
+                            </span>
+
+                            <strong id="confirmTotal">
+                                NPR.0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="payment-row">
+
+                            <span>
+                                Required Advance
+                            </span>
+
+                            <strong>
+                                30%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="payment-row advance">
+
+                            <span>
+                                Pay Now
+                            </span>
+
+                            <strong id="advanceAmount">
+                                NPR.0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="payment-row">
+
+                            <span>
+                                Remaining Amount
+                            </span>
+
+                            <strong id="remainingAmount">
+                                NPR.0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    
+
+    
+
+
+
+                          <!-- =================================================
+     PAYMENT METHOD
+================================================== -->
+
+<div class="payment-method-box">
+
+    <h3>
+        <i class="fa-solid fa-credit-card"></i>
+        Choose Payment Method
+    </h3>
+
+    <!-- eSewa -->
+    <label class="payment-option">
+        <input
+            type="radio"
+            name="paymentMethod"
+            value="eSewa"
+        >
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <span>eSewa</span>
+    </label>
+
+
+    <!-- Khalti -->
+    <label class="payment-option">
+        <input
+            type="radio"
+            name="paymentMethod"
+            value="Khalti"
+        >
+
+        <i class="fa-solid fa-mobile-screen-button"></i>
+
+        <span>Khalti</span>
+    </label>
+
+
+    <!-- Mobile Banking -->
+    <label
+        class="payment-option"
+        id="mobileBankingOption"
+    >
+
+        <input
+            type="radio"
+            name="paymentMethod"
+            value="Mobile Banking"
+        >
+
+        <i class="fa-solid fa-building-columns"></i>
+
+        <span>Mobile Banking</span>
+
+    </label>
+
+
+    <!-- BANK SELECTION -->
+
+    <div
+        class="bank-selection"
+        id="bankSelection"
+        style="display:none;"
+    >
+
+        <div class="bank-selection-title">
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            <span>Select Your Bank</span>
+
+        </div>
+
+
+        <select id="bankName">
+
+            <option value="">
+                -- Select Bank --
+            </option>
+
+            <option value="Nabil Bank">
+                Nabil Bank
+            </option>
+
+            <option value="Global IME Bank">
+                Global IME Bank
+            </option>
+
+            <option value="NIC Asia Bank">
+                NIC Asia Bank
+            </option>
+
+            <option value="Himalayan Bank">
+                Himalayan Bank
+            </option>
+
+            <option value="Nepal Investment Mega Bank">
+                Nepal Investment Mega Bank
+            </option>
+
+            <option value="Prabhu Bank">
+                Prabhu Bank
+            </option>
+
+            <option value="Siddhartha Bank">
+                Siddhartha Bank
+            </option>
+
+            <option value="Kumari Bank">
+                Kumari Bank
+            </option>
+
+            <option value="Sanima Bank">
+                Sanima Bank
+            </option>
+
+            <option value="Machhapuchchhre Bank">
+                Machhapuchchhre Bank
+            </option>
+
+            <option value="Laxmi Sunrise Bank">
+                Laxmi Sunrise Bank
+            </option>
+
+            <option value="Prime Commercial Bank">
+                Prime Commercial Bank
+            </option>
+
+            <option value="Citizens Bank International">
+                Citizens Bank International
+            </option>
+
+            <option value="Nepal Bank">
+                Nepal Bank
+            </option>
+
+            <option value="Rastriya Banijya Bank">
+                Rastriya Banijya Bank
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- Debit / Credit Card -->
+    <label class="payment-option">
+
+        <input
+            type="radio"
+            name="paymentMethod"
+            value="Debit / Credit Card"
+        >
+
+        <i class="fa-solid fa-credit-card"></i>
+
+        <span>Debit / Credit Card</span>
+
+    </label>
+
+
+    <!-- PAY BUTTON -->
+
+    <button
+        type="button"
+        class="pay-advance-btn"
+        id="payAdvanceBtn"
+    >
+
+        Pay
+        <span id="advanceButtonAmount">
+            30% Advance
+        </span>
+        & Confirm Booking
+
+        <i class="fa-solid fa-lock"></i>
+
+    </button>
+
+
+    <p class="secure-payment">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        Minimum 30% advance payment is
+        required to confirm your booking.
+
+    </p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STEP 3 : SUCCESS
+        ================================================== -->
+
+        <div id="bookingSuccess">
+
+
+            <div class="success-card">
+
+
+                <div class="success-check">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+
+                <h2>
+                    Booking Confirmed!
+                </h2>
+
+
+                <p>
+
+                    Congratulations! Your Nepal adventure
+                    has been successfully booked.
+
+                    Your 30% advance payment has been
+                    received and your booking is now confirmed.
+
+                </p>
+
+
+
+                <div class="success-information">
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Booking ID
+                        </span>
+
+                        <strong id="successBookingId">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Traveler
+                        </span>
+
+                        <strong id="successName">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Destination
+                        </span>
+
+                        <strong id="successDestination">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Travel Date
+                        </span>
+
+                        <strong id="successDate">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Total Package Price
+                        </span>
+
+                        <strong id="successTotal">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Advance Paid
+                        </span>
+
+                        <strong id="successAdvance">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Payment Method
+                        </span>
+
+                        <strong id="successPaymentMethod">
+                            -
+                        </strong>
+
+                    </div>
+
+<div
+    class="success-row"
+    id="successBankRow"
+    style="display:none;"
+>
+
+    <span>
+        Bank
+    </span>
+
+    <strong id="successBank">
+        -
+    </strong>
+
+</div>
+
+
+
+
+
+                    <div class="success-row">
+
+                        <span>
+                            Booking Status
+                        </span>
+
+                        <strong class="confirmed-status">
+
+                            CONFIRMED ✓
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    class="home-btn"
+                    onclick="window.location.href='index.html'"
+                >
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Back to Home
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- Existing JavaScript -->
+
+
+
+
+<!-- =========================================================
+     BOOKING JAVASCRIPT
+========================================================= -->
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
+
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingFormCard = document.getElementById("bookingFormCard");
+    const confirmation = document.getElementById("bookingConfirmation");
+    const success = document.getElementById("bookingSuccess");
+
+    const destination = document.getElementById("destination");
+    const persons = document.getElementById("persons");
+    const totalPrice = document.getElementById("totalPrice");
+
+    const payAdvanceBtn = document.getElementById("payAdvanceBtn");
+
+    const bankSelection = document.getElementById("bankSelection");
+    const bankName = document.getElementById("bankName");
+
+    const advanceButtonAmount =
+        document.getElementById("advanceButtonAmount");
+
+
+    /* =========================================================
+       FORMAT CURRENCY
+    ========================================================= */
+
+    function formatMoney(amount) {
+        return "NPR." + Number(amount).toLocaleString("en-IN");
+    }
+
+
+    /* =========================================================
+       CALCULATE TOTAL PACKAGE PRICE
+    ========================================================= */
+
+    function calculatePrice() {
+
+        const numberOfPersons =
+            parseInt(persons.value) || 1;
+
+        const selectedOption =
+            destination.options[destination.selectedIndex];
+
+        const pricePerPerson =
+            parseInt(
+                selectedOption.getAttribute("data-price")
+            ) || 0;
+
+        const total =
+            pricePerPerson * numberOfPersons;
+
+        totalPrice.textContent =
+            formatMoney(total);
+
+        return total;
+    }
+
+
+    /* =========================================================
+       PRICE UPDATE EVENTS
+    ========================================================= */
+
+    persons.addEventListener(
+        "input",
+        calculatePrice
+    );
+
+    destination.addEventListener(
+        "change",
+        calculatePrice
+    );
+
+    calculatePrice();
+
+
+    /* =========================================================
+       GENERATE BOOKING ID
+    ========================================================= */
+
+    function generateBookingID() {
+
+        const randomNumber =
+            Math.floor(
+                100000 +
+                Math.random() * 900000
+            );
+
+        return "ENP-" + randomNumber;
+    }
+
+
+    /* =========================================================
+       FORMAT DATE
+    ========================================================= */
+
+    function formatDate(dateValue) {
+
+        if (!dateValue) {
+            return "-";
+        }
+
+        const date =
+            new Date(dateValue + "T00:00:00");
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            }
+        );
+    }
+
+
+    /* =========================================================
+       MOBILE BANKING - SHOW / HIDE BANK LIST
+    ========================================================= */
+
+    const paymentOptions =
+        document.querySelectorAll(
+            'input[name="paymentMethod"]'
+        );
+
+    paymentOptions.forEach(function (option) {
+
+        option.addEventListener(
+            "change",
+            function () {
+
+                if (this.value === "Mobile Banking") {
+
+                    if (bankSelection) {
+                        bankSelection.style.display = "block";
+                    }
+
+                } else {
+
+                    if (bankSelection) {
+                        bankSelection.style.display = "none";
+                    }
+
+                    if (bankName) {
+                        bankName.value = "";
+                    }
+                }
+            }
+        );
+    });
+
+
+    /* =========================================================
+       STEP 1 - BOOKING FORM SUBMIT
+    ========================================================= */
+
+    bookingForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            /* -----------------------------------------
+               GET FORM VALUES
+            ----------------------------------------- */
+
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+            const phone =
+                document
+                    .getElementById("phone")
+                    .value
+                    .trim();
+
+            const destinationName =
+                destination.value;
+
+            const numberOfPersons =
+                parseInt(persons.value);
+
+            const travelDate =
+                document
+                    .getElementById("travelDate")
+                    .value;
+
+            const specialRequest =
+                document
+                    .getElementById("specialRequest")
+                    .value
+                    .trim();
+
+
+            /* -----------------------------------------
+               BASIC VALIDATION
+            ----------------------------------------- */
+
+            if (!name) {
+                alert("Please enter your full name.");
+                document.getElementById("name").focus();
+                return;
+            }
+
+            if (!email) {
+                alert("Please enter your email address.");
+                document.getElementById("email").focus();
+                return;
+            }
+
+            if (!phone) {
+                alert("Please enter your phone number.");
+                document.getElementById("phone").focus();
+                return;
+            }
+
+            if (!destinationName) {
+                alert("Please select your destination.");
+                destination.focus();
+                return;
+            }
+
+            if (!numberOfPersons || numberOfPersons < 1) {
+                alert("Please enter at least 1 person.");
+                persons.focus();
+                return;
+            }
+
+            if (!travelDate) {
+                alert("Please select your travel date.");
+                document.getElementById("travelDate").focus();
+                return;
+            }
+
+
+            /* -----------------------------------------
+               PACKAGE PRICE
+            ----------------------------------------- */
+
+            const selectedOption =
+                destination.options[
+                    destination.selectedIndex
+                ];
+
+            const pricePerPerson =
+                parseInt(
+                    selectedOption.getAttribute(
+                        "data-price"
+                    )
+                ) || 0;
+
+
+            /* -----------------------------------------
+               TOTAL PRICE
+            ----------------------------------------- */
+
+            const total =
+                pricePerPerson *
+                numberOfPersons;
+
+
+            /* -----------------------------------------
+               30% ADVANCE PAYMENT
+            ----------------------------------------- */
+
+            const advance =
+                total * 0.30;
+
+            const remaining =
+                total - advance;
+
+
+            /* -----------------------------------------
+               GENERATE BOOKING ID
+            ----------------------------------------- */
+
+            const bookingID =
+                generateBookingID();
+
+
+            /* =================================================
+               SHOW BOOKING CONFIRMATION DETAILS
+            ================================================= */
+
+            document.getElementById(
+                "bookingId"
+            ).textContent =
+                bookingID;
+
+            document.getElementById(
+                "confirmName"
+            ).textContent =
+                name;
+
+            document.getElementById(
+                "confirmEmail"
+            ).textContent =
+                email;
+
+            document.getElementById(
+                "confirmPhone"
+            ).textContent =
+                phone;
+
+            document.getElementById(
+                "confirmDestination"
+            ).textContent =
+                destinationName;
+
+            document.getElementById(
+                "confirmPersons"
+            ).textContent =
+                numberOfPersons +
+                " Person(s)";
+
+            document.getElementById(
+                "confirmDate"
+            ).textContent =
+                formatDate(travelDate);
+
+            document.getElementById(
+                "confirmRequest"
+            ).textContent =
+                specialRequest ||
+                "No special request";
+
+            document.getElementById(
+                "confirmTotal"
+            ).textContent =
+                formatMoney(total);
+
+            document.getElementById(
+                "advanceAmount"
+            ).textContent =
+                formatMoney(advance);
+
+            document.getElementById(
+                "remainingAmount"
+            ).textContent =
+                formatMoney(remaining);
+
+
+            /* =================================================
+               SAVE CURRENT BOOKING
+            ================================================= */
+
+            window.currentBooking = {
+
+                bookingID: bookingID,
+
+                name: name,
+
+                email: email,
+
+                phone: phone,
+
+                destination: destinationName,
+
+                persons: numberOfPersons,
+
+                travelDate: travelDate,
+
+                specialRequest: specialRequest,
+
+                pricePerPerson: pricePerPerson,
+
+                total: total,
+
+                advance: advance,
+
+                remaining: remaining
+
+            };
+
+
+            /* =================================================
+               UPDATE PAY BUTTON AMOUNT
+            ================================================= */
+
+            if (advanceButtonAmount) {
+
+                advanceButtonAmount.textContent =
+                    formatMoney(advance);
+
+            }
+
+
+            /* =================================================
+               HIDE BOOKING FORM
+            ================================================= */
+
+            bookingFormCard.style.display =
+                "none";
+
+
+            /* =================================================
+               SHOW CONFIRMATION SECTION
+            ================================================= */
+
+            confirmation.style.display =
+                "block";
+
+
+            /* =================================================
+               SCROLL TO CONFIRMATION
+            ================================================= */
+
+            setTimeout(function () {
+
+                confirmation.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 100);
+
+        }
+    );
+
+
+    /* =========================================================
+       STEP 2 - PAYMENT BUTTON
+    ========================================================= */
+
+    if (payAdvanceBtn) {
+
+        payAdvanceBtn.addEventListener(
+            "click",
+            function () {
+
+                /* -----------------------------------------
+                   CHECK BOOKING
+                ----------------------------------------- */
+
+                const booking =
+                    window.currentBooking;
+
+                if (!booking) {
+
+                    alert(
+                        "Booking information not found. Please fill the booking form again."
+                    );
+
+                    return;
+                }
+
+
+                /* -----------------------------------------
+                   CHECK PAYMENT METHOD
+                ----------------------------------------- */
+
+                const selectedPayment =
+                    document.querySelector(
+                        'input[name="paymentMethod"]:checked'
+                    );
+
+                if (!selectedPayment) {
+
+                    alert(
+                        "Please select a payment method before continuing."
+                    );
+
+                    return;
+                }
+
+
+                const paymentMethod =
+                    selectedPayment.value;
+
+
+                /* -----------------------------------------
+                   MOBILE BANKING VALIDATION
+                ----------------------------------------- */
+
+                if (
+                    paymentMethod ===
+                    "Mobile Banking"
+                ) {
+
+                    if (
+                        !bankName ||
+                        !bankName.value
+                    ) {
+
+                        alert(
+                            "Please select your bank for Mobile Banking."
+                        );
+
+                        if (bankName) {
+                            bankName.focus();
+                        }
+
+                        return;
+                    }
+                }
+
+
+                /* -----------------------------------------
+                   GET SELECTED BANK
+                ----------------------------------------- */
+
+                const selectedBank =
+                    bankName
+                        ? bankName.value
+                        : "";
+
+
+                /* -----------------------------------------
+                   SAVE PAYMENT INFORMATION
+                ----------------------------------------- */
+
+                booking.paymentMethod =
+                    paymentMethod;
+
+                booking.bank =
+                    paymentMethod ===
+                    "Mobile Banking"
+                        ? selectedBank
+                        : "";
+
+
+                /* -----------------------------------------
+                   DISABLE BUTTON
+                ----------------------------------------- */
+
+                payAdvanceBtn.disabled =
+                    true;
+
+                payAdvanceBtn.innerHTML =
+                    '<i class="fa-solid fa-spinner fa-spin"></i> Processing Payment...';
+
+
+                /* =================================================
+                   DEMO PAYMENT PROCESSING
+
+                   IMPORTANT:
+                   This is only frontend/demo processing.
+                   Real payment confirmation requires
+                   eSewa/Khalti/bank/card API + backend verification.
+                ================================================= */
+
+                setTimeout(function () {
+
+
+                    /* -----------------------------------------
+                       SUCCESS BOOKING ID
+                    ----------------------------------------- */
+
+                    document.getElementById(
+                        "successBookingId"
+                    ).textContent =
+                        booking.bookingID;
+
+
+                    /* -----------------------------------------
+                       SUCCESS NAME
+                    ----------------------------------------- */
+
+                    document.getElementById(
+                        "successName"
+                    ).textContent =
+                        booking.name;
+
+
+                    /* -----------------------------------------
+                       SUCCESS DESTINATION
+                    ----------------------------------------- */
+
+                    document.getElementById(
+                        "successDestination"
+                    ).textContent =
+                        booking.destination;
+
+
+                    /* -----------------------------------------
+                       SUCCESS DATE
+                    ----------------------------------------- */
+
+                    document.getElementById(
+                        "successDate"
+                    ).textContent =
+                        formatDate(
+                            booking.travelDate
+                        );
+
+
+                    /* -----------------------------------------
+                       SUCCESS TOTAL
+                    ----------------------------------------- */
+
+                    document.getElementById(
+                        "successTotal"
+                    ).textContent =
+                        formatMoney(
+                            booking.total
+                        );
+
+
+                    /* -----------------------------------------
+                       SUCCESS ADVANCE
+                    ----------------------------------------- */
+
+                    document.getElementById(
+                        "successAdvance"
+                    ).textContent =
+                        formatMoney(
+                            booking.advance
+                        );
+
+
+                    /* -----------------------------------------
+                       SUCCESS PAYMENT METHOD
+                    ----------------------------------------- */
+
+                    document.getElementById(
+                        "successPaymentMethod"
+                    ).textContent =
+                        paymentMethod;
+
+
+                    /* =================================================
+                       SHOW BANK IF MOBILE BANKING
+                    ================================================= */
+
+                    const successBankRow =
+                        document.getElementById(
+                            "successBankRow"
+                        );
+
+                    const successBank =
+                        document.getElementById(
+                            "successBank"
+                        );
+
+                    if (
+                        paymentMethod ===
+                        "Mobile Banking"
+                    ) {
+
+                        if (successBank) {
+
+                            successBank.textContent =
+                                selectedBank;
+
+                        }
+
+                        if (successBankRow) {
+
+                            successBankRow.style.display =
+                                "flex";
+
+                        }
+
+                    } else {
+
+                        if (successBankRow) {
+
+                            successBankRow.style.display =
+                                "none";
+
+                        }
+                    }
+
+
+                    /* =================================================
+                       HIDE CONFIRMATION
+                    ================================================= */
+
+                    confirmation.style.display =
+                        "none";
+
+
+                    /* =================================================
+                       SHOW SUCCESS
+                    ================================================= */
+
+                    success.style.display =
+                        "block";
+
+
+                    /* =================================================
+                       SCROLL TO SUCCESS
+                    ================================================= */
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+
+                    /* -----------------------------------------
+                       RESET BUTTON
+                    ----------------------------------------- */
+
+                    payAdvanceBtn.disabled =
+                        false;
+
+                    payAdvanceBtn.innerHTML =
+                        '<i class="fa-solid fa-lock"></i> Pay 30% Advance & Confirm Booking';
+
+
+                }, 2000);
+
+            }
+        );
+    }
+
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

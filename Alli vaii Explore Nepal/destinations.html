@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Destinations | Explore Nepal</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-mountain-sun"></i>
+            </div>
+
+            <div>
+                <span>EXPLORE</span>
+                <strong>NEPAL</strong>
+            </div>
+
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navbar" id="navbar">
+
+            <a href="index.html">Home</a>
+            <a href="destinations.html" class="active">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+            <a href="booking.html" class="nav-book">
+                Book a Trip
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <span class="section-label light">
+            DISCOVER NEPAL
+        </span>
+
+        <h1>Explore Amazing Destinations</h1>
+
+        <p>
+            From ancient cities to magnificent Himalayan peaks,
+            discover the places that make Nepal unforgettable.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="filter-buttons">
+
+    <button type="button"
+            class="filter-btn active"
+            data-filter="all">
+        All
+    </button>
+
+    <button type="button"
+            class="filter-btn"
+            data-filter="culture">
+        Culture
+    </button>
+
+    <button type="button"
+            class="filter-btn"
+            data-filter="nature">
+        Nature
+    </button>
+
+    <button type="button"
+            class="filter-btn"
+            data-filter="adventure">
+        Adventure
+    </button>
+
+    <button type="button"
+            class="filter-btn"
+            data-filter="spiritual">
+        Spiritual
+    </button>
+
+</div>
+
+
+        <div class="destination-grid large-grid">
+
+
+            <article class="destination-card filter-item"
+                     data-category="culture">
+
+                <div class="card-image">
+
+                    <img src="https://ignitetravelsolution.com/wp-content/uploads/2024/09/Tourist-Attractions-in-Kathmandu-Nepal--1024x682.jpg"
+                         alt="Kathmandu">
+
+                    <span class="card-tag">Culture</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Kathmandu</h3>
+
+                    <p>
+                        Nepal's historic capital filled with temples,
+                        stupas, palaces and vibrant streets.
+                    </p>
+
+                    <a href="booking.html?destination=Kathmandu"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+           <article class="destination-card filter-item"
+                     data-category="culture">
+
+                <div class="card-image">
+
+                    <img src="https://4.bp.blogspot.com/-IZ3tmxK381M/WIo2Jv-VuRI/AAAAAAAAAOQ/FSNU-blb0j4m1e2YRUjanxOTWxPj00MNACLcB/s1600/NAT-Janki_Mandir_of_Janakpu-1.jpg"
+                         alt="Janakpur">
+
+                    <span class="card-tag">Culture</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Janakpur</h3>
+
+                    <p>
+                        Janaki Mandir is a beautiful and historic temple. Dedicated to Goddess Sita, the temple is believed to be built at the birthplace of Sita and is an important pilgrimage site.
+                    </p>
+
+                    <a href="booking.html?destination=janakpur"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+
+
+
+            <article class="destination-card filter-item"
+                     data-category="nature">
+
+                <div class="card-image">
+
+                    <img src="https://www.holidify.com/images/cmsuploads/compressed/attr_123792_20190805180929.jpg"
+                         alt="Pokhara">
+
+                    <span class="card-tag">Nature</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Pokhara</h3>
+
+                    <p>
+                        A peaceful lakeside city famous for mountain
+                        views and adventure activities.
+                    </p>
+
+                    <a href="booking.html?destination=Pokhara"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="destination-card filter-item"
+                     data-category="adventure">
+
+                <div class="card-image">
+
+                    <img src="https://globalnews.ca/wp-content/uploads/2024/01/GettyImages-1292532931.jpg?quality=85&strip=all&w=1200"
+                         alt="Everest">
+
+                    <span class="card-tag">Adventure</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Everest Base Camp</h3>
+
+                    <p>
+                        Trek through spectacular Himalayan scenery
+                        toward the world's highest mountain.
+                    </p>
+
+                    <a href="booking.html?destination=Everest"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+           
+
+
+            <article class="destination-card filter-item"
+                     data-category="spiritual">
+
+                <div class="card-image">
+
+                    <img src="https://1.bp.blogspot.com/-pvU20mj6SlY/U8AbQrCkcII/AAAAAAAAHgY/lp9YEpzBMtk/s1600/lumbini-buddhist-pilgrimage-tour.jpg"
+                         alt="Lumbini">
+
+                    <span class="card-tag">Spiritual</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Lumbini</h3>
+
+                    <p>
+                        Visit the birthplace of Lord Buddha
+                        and experience its peaceful atmosphere.
+                    </p>
+
+                    <a href="booking.html?destination=Lumbini"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="destination-card filter-item"
+                     data-category="culture">
+
+                <div class="card-image">
+
+                    <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2023/03/Taumadhi-Square-Bhaktapur-Nepal.jpg?resize=1000%2C668&ssl=1"
+                         alt="Bhaktapur">
+
+                    <span class="card-tag">Culture</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Bhaktapur</h3>
+
+                    <p>
+                        Walk through beautiful squares, traditional
+                        architecture and historic temples.
+                    </p>
+
+                    <a href="booking.html?destination=Bhaktapur"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+          <article class="destination-card filter-item"
+                     data-category="adventure">
+
+                <div class="card-image">
+
+                    <img src="https://hsj.com.np/uploads/0000/386/2020/05/05/mustang-region-trek.jpg"
+                         alt="Mustang">
+
+                    <span class="card-tag">Adventure</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Mustang</h3>
+
+                    <p>
+                        Explore dramatic desert-like mountains,
+                        monasteries and traditional villages.
+                    </p>
+
+                    <a href="booking.html?destination=Mustang"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="destination-card filter-item"
+                     data-category="culture">
+
+                <div class="card-image">
+
+                    <img src="https://j1ad0nr4fkte9vkm.public.blob.vercel-storage.com/blog/patan-highlights-NYvOpwCdlDRUAIIdD4Lhb188zlbRnm.webp"
+                         alt="Patan">
+
+                    <span class="card-tag">Culture</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Patan</h3>
+
+                    <p>
+                        Discover artistic heritage, temples and
+                        the famous Patan Durbar Square.
+                    </p>
+
+                    <a href="booking.html?destination=Patan"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="destination-card filter-item"
+                     data-category="nature">
+
+                <div class="card-image">
+
+                    <img src="https://www.easytournepal.com/admin/public/images/post/nagarkot-travel-guide.jpg"
+                         alt="Nagarkot">
+
+                    <span class="card-tag">Nature</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Nagarkot</h3>
+
+                    <p>
+                        Enjoy spectacular sunrise and sunset views
+                        over the Himalayan mountain range.
+                    </p>
+
+                    <a href="booking.html?destination=Nagarkot"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+           
+                 <article class="destination-card filter-item"
+                     data-category="adventure">
+
+                <div class="card-image">
+
+                    <img src="https://tripjive.com/wp-content/uploads/2024/10/Day-trip-to-Chitwan-National-Park-from-Kathmandu-1.jpg"
+                         alt="Chitwan National Park">
+
+                    <span class="card-tag">Adventure</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Chitwan National Park</h3>
+
+                    <p>
+                        Discover dense forests, Rare wild animals, and exciting jungle safaris in the heart of Nepal.
+                    </p>
+
+                    <a href="booking.html?destination=Chitwan National Park"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+                     <article class="destination-card filter-item"
+                     data-category="adventure">
+
+                <div class="card-image">
+
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/19/90/shahid-smarak-hetauda.jpg?w=1000&h=800&s=1"
+                         alt="Hetauda">
+
+                    <span class="card-tag">Adventure</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Hetauda</h3>
+
+                    <p>
+                        Explore Sahid Smarak Park, scenic beauty, refreshing surroundings, and peaceful moments in the heart of Hetauda.
+                    </p>
+
+                    <a href="booking.html?destination=Hetauda"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+         <article class="destination-card filter-item"
+                     data-category="adventure">
+
+                <div class="card-image">
+
+                    <img src="https://www.vyastreksnepal.com/storage/public/upload/gallery/7OsvAAiSwNtDbNZ3JqLtCTY5IenEAyPgVVVHLHql.png"
+                         alt="Koshi Tappu Wildlife Reserve">
+
+                    <span class="card-tag">Adventure</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Koshi Tappu Wildlife Reserve</h3>
+
+                    <p>
+                        Experience peaceful wetlands, exotic birds, and unforgettable wildlife adventures.
+                    </p>
+
+                    <a href="booking.html?destination=Koshi Tappu Wildlife Reserve"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+       <article class="destination-card filter-item"
+                     data-category="nature">
+
+                <div class="card-image">
+
+                    <img src="https://www.visionsoftravel.org/wp-content/uploads/2020/10/Chandragiri-Hills-Kathmandu-Nepal-21-scaled.jpg"
+                         alt="Chandragiri Hills">
+
+                    <span class="card-tag">Nature</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Chandragiri Hills</h3>
+
+                    <p>
+                        Experience panoramic mountain views, fresh air, cable car rides, and peaceful surroundings.
+                    </p>
+
+                    <a href="booking.html?destination=Chandragiri Hills"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+                <article class="destination-card filter-item"
+                     data-category="adventure">
+
+                <div class="card-image">
+
+                    <img src="https://vhnepal.com.np/wp-content/uploads/2026/01/annapurna-base-camp-sun-rise.webp"
+                         alt="Annapurna Base Camp">
+
+                    <span class="card-tag">Adventure</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Annapurna Base Camp</h3>
+
+                    <p>
+                        Explore snow-capped mountains, charming villages, breathtaking scenery, and an unforgettable trekking journey.
+                        Best Time: March–May & September–November
+                    </p>
+
+                    <a href="booking.html?destination=Annapurna Base Camp"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+           <article class="destination-card filter-item"
+                     data-category="adventure">
+
+                <div class="card-image">
+
+                    <img src="https://i.ytimg.com/vi/EHd5jcYb45k/maxresdefault.jpg"
+                         alt="Bharat Taal">
+
+                    <span class="card-tag">Adventure</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Bharat Taal</h3>
+
+                    <p>
+                        Explore serene waters, beautiful surroundings, and NEPAL`S LARGEST MAN MADE LAKE in the heart of Sarlahi district.”
+                    </p>
+
+                    <a href="booking.html?destination=Bharat Taal"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+              <article class="destination-card filter-item"
+                     data-category="nature">
+
+                <div class="card-image">
+
+                    <img src="https://www.himalayanforever.com/public/storage/trip-seos/19/5db49d8d1d42d2db790bcce43379e5d6.jpg"
+                         alt="Rara Lake">
+
+                    <span class="card-tag">Nature</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Rara Lake</h3>
+
+                    <p>
+                        Explore Nepal’s largest lake, surrounded by lush forests, majestic mountains, and peaceful natural landscapes.
+                    </p>
+
+                    <a href="booking.html?destination=Rara Lake"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+      
+                    <article class="destination-card filter-item"
+                     data-category="nature">
+
+                <div class="card-image">
+
+                    <img src="https://www.nepaltrekhub.com/wp-content/uploads/2020/12/tilicho-lake-trek.jpg"
+                         alt="Tilicho Lake">
+
+                    <span class="card-tag">Nature</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Tilicho Lake</h3>
+
+                    <p>
+                        Explore crystal-clear waters, snow-capped peaks, dramatic valleys, and the peaceful beauty of Tilicho Lake.
+                    </p>
+
+                    <a href="booking.html?destination=Tilicho Lake"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+                   <article class="destination-card filter-item"
+                     data-category="nature">
+
+                <div class="card-image">
+
+                    <img src="https://www.tusktravel.com/blog/wp-content/uploads/2023/06/Tindhare-Waterfall-Nepal-1024x800.jpg"
+                         alt="Tindhare Waterfall">
+
+                    <span class="card-tag">Nature</span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Tindhare Waterfall</h3>
+
+                    <p>
+                        Explore a breathtaking three-stream waterfall, lush green hills, peaceful surroundings, and the natural beauty of Nepal.
+                    </p>
+
+                    <a href="booking.html?destination=Tindhare Waterfall"
+                       class="card-link">
+                        Plan a Trip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-about">
+
+            <a href="index.html" class="logo footer-logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                </div>
+
+                <div>
+                    <span>EXPLORE</span>
+                    <strong>NEPAL</strong>
+                </div>
+
+            </a>
+
+            <p>
+                Discover Nepal's mountains, culture and natural beauty.
+            </p>
+
+             <div class="socials">
+
+                <!-- Facebook Icon -->
+
+                <a href="https://www.facebook.com/YourPageName"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon">
+               <i class="fab fa-facebook-f"></i>
+               </a>
+  
+               <!-- Instagram Icon -->
+
+                <a href="https://www.instagram.com/YourUsername"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="social-icon">
+                 <i class="fab fa-instagram"></i>
+                 </a>
+
+                <!-- TikTOK Icon -->
+                <a href="https://www.tiktok.com/@YourUsername"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon">
+                <i class="fab fa-tiktok"></i>
+                </a>
+                
+
+               <!-- YouTube Icon -->
+                <a href="https://www.youtube.com/watch?v=gCRNEJxDJKM" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="social-icon youtube">
+                <i class="fab fa-youtube"></i>
+                </a>
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <div>
+
+            <h4>Explore</h4>
+
+            <a href="destinations.html">📍Destinations</a>
+            <a href="packages.html">🧳Packages</a>
+            <a href="about.html">👥About</a>
+            <a href="contact.html">📞Contact</a>
+
+        </div>
+
+        <div>
+
+            <h4>Contact</h4>
+            <p>
+
+           <!-- Janakpur Location -->
+       <a href="https://www.google.com/maps/search/?api=1&query=Janakpur%2C+Nepal"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="contact-link">
+
+        <i class="fa-solid fa-location-dot"></i>
+        Janakpur, Nepal
+
+       </a>
+
+            </p>
+
+             <p>
+                <i class="fa-solid fa-phone"></i>
+                +977 9812180498
+            </p>
+
+             <p>
+                <i class="fa-solid fa-envelope"></i>
+                paglu3620@gmail.com
+            </p>
+
+
+
+                      
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            © 2026 Explore Nepal. All Rights Reserved.
+        </div>
+    </div>
+
+</footer>
+
+<script>
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const destinationCards = document.querySelectorAll(".destination-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filterValue = button.getAttribute("data-filter");
+
+        destinationCards.forEach(card => {
+
+            const cardCategory = card.getAttribute("data-category");
+
+            if (filterValue === "all" || cardCategory === filterValue) {
+                card.classList.remove("hide");
+            } else {
+                card.classList.add("hide");
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
